@@ -1,0 +1,120 @@
+.OnConstruction{
+    width: 100%;
+    height: 100%;
+    padding: 2em;
+    box-sizing: border-box;
+    margin: 0 auto;
+    color: #2c2a36;
+    text-align: center;
+    background-color: #2c2a36;
+}
+
+.icon {
+    position: relative;
+    display: inline-block;
+    width: 6em;
+    height: 5em;
+    font-size: 3em; /* control icon size here */
+  }
+  .sun , .sun:after {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    border-radius: 3%;
+  }
+  .sun {
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    margin: -.5em 0 0 -.5em;
+    background: #f7dfad;
+  }
+  .sun:after {
+    content: '';
+    display: block;
+    background: #f3bd3d;
+    transform: rotate(45deg);
+    animation: rot 4.5s ease-in-out infinite;
+  }
+  @keyframes rot {
+    0% { transform: rotate(45deg); }
+    25% { transform: rotate(45deg); }
+    50% { transform: rotate(-315deg); }
+    80% { transform: rotate(-315deg); }
+    100% { transform: rotate(45deg); }
+  }
+  .ray, .ray:before, .ray:after {
+    position: absolute;
+    top: 1em;
+    left: 50%;
+    display: block;
+    width: .2em;
+    height: .5em;
+    margin-left: -0.1em;
+    background: #f3bd3d;
+    border-radius: 0.25em;
+  }
+  .ray:before {
+    content: '';
+    top: .3em;
+    transform: rotate(-45deg);
+    margin-left: -0.9838834764831844em;
+    
+  }
+  .ray:after {
+    content: '';
+    top: .3em;
+    transform: rotate(45deg);
+    margin-left: 0.7838834764831844em;
+  }
+  .ray:nth-child(2) {
+    top: auto;
+    bottom: 1em;
+  }
+  .ray:nth-child(2):before {
+    content: '';
+    transform: rotate(45deg);
+    margin-left: -0.9838834764831844em;
+    top: auto;
+    bottom: .3em;
+  }
+  .ray:nth-child(2):after {
+    content: '';
+    transform: rotate(-45deg);
+    margin-left: 0.7838834764831844em;
+    top: auto;
+    bottom: .3em;
+  }
+
+  .ray:nth-child(3):before {
+    transform: rotate(90deg);
+    top:0; 
+    margin-top: 1.25em;
+    margin-left: -1.35em;
+  }
+  .ray:nth-child(3):after {
+    transform: rotate(90deg);
+    top:0; 
+    margin-top: 1.25em;
+    margin-left: 1.15em;
+  }
+  .ray, .ray:before, .ray:after {
+    animation: decre 4.5s ease-in-out infinite;
+  }
+  @keyframes decre {
+    0% { opacity: 1; }
+    12%{ opacity: 0; }
+    25% { opacity: 1; }
+    50% { opacity: 1; }
+    65% { opacity: 0;}
+    80% { opacity: 1; }
+    100% { opacity: 1; }
+  }
+  
+  .Message{
+    font-family: 'Berkshire Swash', cursive;
+    color: #f7dfad;
+    font-size: 2em;
+    letter-spacing: 0.6em;
+    line-height: 2;
+  }

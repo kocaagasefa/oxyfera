@@ -1,0 +1,13 @@
+.carousel{
+    margin: auto;
+    box-sizing: border-box;
+    max-height: 400px;
+}
+
+.carousel-inner img {
+    object-fit: cover;
+    object-position: top;
+    max-height: 400px;    
+    width:100%;
+}
+

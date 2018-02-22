@@ -1,0 +1,21 @@
+.Main{
+    background: transparent;
+    text-align: center;
+    font-size: 5em;
+    color: white;
+    height: calc(50% - 50px);
+    padding-top: 50px;
+}
+
+@keyframes entrance {
+    0%{
+        transform: translateY(50%);
+        opacity: 0;
+        
+    }
+    100%{
+        transform:translateY(0);
+        opacity: 1;
+        
+    }
+}
