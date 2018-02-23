@@ -1,8 +1,30 @@
  .slider{
-    margin: auto;
     box-sizing: border-box;
     
 }
+.slider-image{
+    height: calc(calc(100vh) - 158px );
+    max-height: calc(calc(100vh) - 158px );
+    width: 100%;
+    background-size: cover;
+}
 
 
+@media (max-width:800px){
+    .slider-image{
+        height: 400px;
+    }
+}
+
+@media (max-width:600px){
+    .slider-image{
+        height: 300px;
+    }
+}
+
+@media (max-width:400px){
+    .slider-image{
+        height: 200px;
+    }
+}
 

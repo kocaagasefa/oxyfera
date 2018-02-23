@@ -120,8 +120,8 @@ const DefaultDecorators = [
       getButtonStyles=(active)=> {
         return {
           border: 0,
-          background: 'white',
-          color: 'black',
+          background: 'transparent',
+          color: 'white',
           cursor: 'pointer',
           padding: 10,
           outline: 0,

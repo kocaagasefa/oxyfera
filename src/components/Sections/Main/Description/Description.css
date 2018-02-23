@@ -1,0 +1,22 @@
+.Description {    
+    margin: 20px auto;
+    font: normal 16px sans-serif;
+}
+
+.Description-Text {
+    max-width: 800px;
+    text-overflow: clip;
+    margin: auto;
+    text-align: justify;
+    line-height: 2em;
+}
+@media (min-width:992px){
+    .Description {    
+        margin: 100px auto;
+    }
+    .Description-TextArea {
+        display: flex;
+        align-items: center;
+    }
+}
+

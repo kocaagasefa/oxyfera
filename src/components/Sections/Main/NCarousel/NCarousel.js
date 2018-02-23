@@ -19,9 +19,10 @@ class nCarousel extends Component{
           speed={400}
           autoplay={true}
           wrapAround={true}>
-            <img className="slider-image" src={slides[0]} alt="Resim alınamadı"/>
-            <img className="slider-image" src={slides[1]} alt="Resim alınamadı"/>
-            <img className="slider-image" src={slides[2]} alt="Resim alınamadı"/>
+            <div className="slider-image" style={{backgroundImage:"url("+slides[0] +")"}}/>
+            <div className="slider-image" style={{backgroundImage:"url("+slides[1] +")"}}/>
+            <div className="slider-image" style={{backgroundImage:"url("+slides[2] +")"}}/>
+            
         </NukaCarousel>
       )
     }
