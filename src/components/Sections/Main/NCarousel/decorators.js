@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Glyphicon} from 'react-bootstrap';
 
 const DefaultDecorators = [
   {
@@ -10,7 +11,7 @@ const DefaultDecorators = [
         return (
           <button onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave}
             style={this.getButtonStyles(this.props.currentSlide === 0 && !this.props.wrapAround)}
-            onClick={this.handleClick}><span className="glyphicon glyphicon-chevron-left"></span></button>
+            onClick={this.handleClick}><Glyphicon glyph="chevron-left" /></button>
         )
       }
       handleClick=(e)=> {
@@ -46,7 +47,7 @@ const DefaultDecorators = [
         return (
           <button onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave}
             style={this.getButtonStyles(this.props.currentSlide + this.props.slidesToScroll >= this.props.slideCount && !this.props.wrapAround)}
-            onClick={this.handleClick}><span className="glyphicon glyphicon-chevron-right"></span></button>
+            onClick={this.handleClick}><Glyphicon glyph="chevron-right" /></button>
         )
       }
     handleClick=(e)=> {

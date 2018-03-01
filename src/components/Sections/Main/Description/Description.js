@@ -1,23 +1,26 @@
 import React from 'react';
-import {Grid,Row,Col,Thumbnail} from 'react-bootstrap';
+import {Grid,Row,Col,Thumbnail,PageHeader,Well} from 'react-bootstrap';
 import './Description.css';
-import BarImage from '../../../../assets/images/Description/bar.jpg';
+import BarImage from '../../../../assets/images/Description/content1.jpeg';
+import descriptionText from './descriptionText';
 
 const description = () => (
     <div className="Description">
-        <h3> Oksijen Bar Nedir? </h3>
+        
         <Grid >
-            <Row className="Description-TextArea">                
-                <Col sm={12} md={4} >
-                    <Thumbnail src={BarImage} />
+                      
+            <Row className="Description-TextArea">       
+           
+                <Col sm={6} md={3} smOffset={3} mdOffset={0}>
+                    <Thumbnail src={BarImage}/>
                 </Col>
-                <Col sm={12} md={8}>
-                    <p className="Description-Text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <Col sm={12} md={9} style={{height:"100%"}}>
+                <h3 className="Description-Header"> Oksijen Bar Nedir? </h3>
+                    <p className="Description-Text">{descriptionText}</p>
                 </Col>
-
-            </Row>
+                </Row>
+    
+            
         </Grid>
     </div>
 );

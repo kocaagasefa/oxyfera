@@ -5,6 +5,10 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import OnConstruction from './components/OnConstruction/OnConstruction';
+
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+
 const Dev = props => (
     <Switch>
         <Route path="/dev" component={App} />

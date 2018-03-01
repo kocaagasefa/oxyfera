@@ -3,11 +3,21 @@ footer.nb-footer {
     animation: footerAnimation .5s ease-in forwards;
     background: #222;
     border-top: 4px solid #b78c33;
-z-index: 90;
-position: fixed;
-bottom: 0;
-width: 100%;
-box-sizing: border-box;}
+    z-index: 90;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width:767px){
+    footer.nb-footer{
+        animation: none;
+        position:static;
+    }
+    
+}
+
 
     footer.nb-footer .about {
     margin: 0 auto;
