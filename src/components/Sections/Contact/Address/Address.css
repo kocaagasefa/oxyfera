@@ -1,0 +1,22 @@
+.Address{
+    padding: 20px 10%;
+}
+.Address-Item{
+    margin: 55px auto;
+    display: flex;
+    align-items: center;
+}
+.Address-Item-Left{
+    display: inline-block;
+}
+.Address-Item-Right{
+    display: inline-block;
+    margin-left: 10%;
+    flex-grow: 2;
+    text-align: left;
+}
+.Address-Item-Title{
+    font-weight: bold;
+    display: block;
+    margin: auto;
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 import './Footer.css';
-import FontAwesome from 'react-fontawesome';
 
 const footer = () => (
     <footer className="nb-footer footer-custom">
@@ -15,10 +14,9 @@ const footer = () => (
                 <div className="col-xs-12 col-sm-6">
 	                    <div className="social-media">
                             <ul className="list-inline">
-                                    <li><a href="http://www.oxyfera.com/" title=""><i className="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="http://www.oxyfera.com/" title=""><i className="fab fa-twitter"></i></a></li>
-                                    <li><a href="http://www.oxyfera.com/" title=""><i className="fab fa-google-plus-g"></i></a></li>
-                                    <li><a href="http://www.oxyfera.com/" title=""><i className="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://www.facebook.com/Oxyfera-2118194871745074/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://twitter.com/oxyfera" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a></li>
+                                    <li><a href="https://www.instagram.com/oxyfera/" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a></li>
                             </ul>
                     </div>
                 </div>

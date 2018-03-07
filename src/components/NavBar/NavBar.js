@@ -1,10 +1,10 @@
 import React from 'react';
-import {Navbar,Nav,NavItem} from 'react-bootstrap';
+import {Navbar,Nav,NavItem,NavDropdown,MenuItem} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 import Logo from './Logo/Logo';
 import './NavBar.css';
 const navBar = (props) => (
-<Navbar onToggle={console.log} fluid inverse collapseOnSelect fixedTop>
+<Navbar fluid collapseOnSelect fixedTop>
   <Navbar.Header>
     <Navbar.Brand>
       <Logo />
@@ -13,22 +13,34 @@ const navBar = (props) => (
   </Navbar.Header>
   <Navbar.Collapse>
     <Nav pullRight>
-    <LinkContainer exact to={props.home} >
+    <LinkContainer exact to="/" >
       <NavItem>
           Ana Sayfa
       </NavItem>
     </LinkContainer>
-    <LinkContainer to={props.home+"/about"} >
+    <LinkContainer to="/about" >
       <NavItem>
         Hakkımızda
       </NavItem>
     </LinkContainer>
-    <LinkContainer exact to={props.home+"/products"} >
-      <NavItem>
-      Ürünler
-      </NavItem>
-    </LinkContainer>
-    <LinkContainer exact to={props.home+"/contact"} >
+    <NavDropdown title="Ürünlerimiz" id="basic-nav-dropdown">
+              
+                <LinkContainer exact to="/products/single" >
+                  <MenuItem>
+                    Tekli Oksijen Bar
+                    </MenuItem> 
+                </LinkContainer>
+                
+              
+                <LinkContainer exact to="/products/double">
+                    <MenuItem>
+                        İkili Oksijen Bar
+                    </MenuItem> 
+                </LinkContainer>
+                
+ 
+      </NavDropdown >
+    <LinkContainer exact to="/contact">
       <NavItem>
           İletişim
       </NavItem>

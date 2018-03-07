@@ -1,5 +1,4 @@
 .GoogleMapsContainer {
-    margin-top: calc(100vh / 8);
     width: 100%;
     height: calc(100vh / 1.5);
     position: relative;

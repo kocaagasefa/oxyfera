@@ -9,16 +9,9 @@ import OnConstruction from './components/OnConstruction/OnConstruction';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
-const Dev = props => (
-    <Switch>
-        <Route path="/dev" component={App} />
-        <Route path="/" exact component={OnConstruction} />
-    </Switch>
-);
-
 const app = (
     <BrowserRouter>
-        <Dev />
+        <App />
     </BrowserRouter>
 )
 ReactDOM.render(app, document.getElementById('root'));

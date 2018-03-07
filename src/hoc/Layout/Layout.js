@@ -9,7 +9,7 @@ class Layout extends Component {
     render () {
         return (
             <Aux>
-                <NavBar home={this.props.home}/>
+                <NavBar />
                 <main className="Content">
                     {this.props.children}
                 </main>

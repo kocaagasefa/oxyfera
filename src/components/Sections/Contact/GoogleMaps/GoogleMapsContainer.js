@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 import './GoogleMapsContainer.css';
+import PlaceCard from './PlaceCard/PlaceCard';
 
 export class Container extends Component {
 
@@ -17,23 +18,18 @@ render() {
       }
     return (
     <div className="GoogleMapsContainer" >
+    <PlaceCard />
       <Map 
         google={this.props.google} 
         zoom={14}
         style={style}
-        initialCenter={{
-            lat: 39.954594, 
-            lng: 32.740350
+        initialCenter={{ 
+            lat: 39.962398, 
+            lng: 32.745058
           }}>
-
+        
        <Marker onClick={this.onMarkerClick}
-                name={'Current location'} />
-        {/* 
-        <InfoWindow onClose={this.onInfoWindowClose}>
-            <div>
-              <h1>{this.state.selectedPlace.name}</h1>
-            </div>
-        </InfoWindow> */}
+                name={'Current location'} /> 
       </Map>
     </div>
     );

@@ -1,0 +1,6 @@
+.Contact{
+    padding-top: calc(100vh / 8);
+    background-color: #eee;
+    animation: sectionAnimation .5s ease-in forwards; 
+}
+

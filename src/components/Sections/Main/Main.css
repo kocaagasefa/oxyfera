@@ -1,9 +1,6 @@
 .Main{
     
-    animation: sectionAnimation .5s ease-in forwards;
-    background: transparent; 
-    padding-top: 50px;
-    padding-bottom: 200px;
+    animation: sectionAnimation .5s ease-in forwards;    
 }
 
 @keyframes entrance {

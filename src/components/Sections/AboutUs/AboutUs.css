@@ -1,0 +1,37 @@
+.AboutUs{
+    padding:55px 20px;
+    background-color: #eee;   
+    animation: sectionAnimation .5s ease-in forwards; 
+}
+.AboutUs-Card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: calc(100vh - 211px);
+}
+
+.AboutUs-Text{
+    max-width: 768px;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+.AboutUs-Contact-Button{
+    text-decoration: none;
+    background: none;
+    border: 2px solid #232323;
+    padding: 16px 48px;
+    color: black;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all ease-in-out .3s;
+}
+.AboutUs-Contact-Button:hover{
+    color: #ffffff;
+    background-color: #333333;
+    border-color: #333333;
+    text-decoration: none;
+}

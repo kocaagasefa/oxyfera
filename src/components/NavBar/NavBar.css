@@ -1,9 +1,9 @@
 .navbar {
-    animation: navBarAnimation .5s ease-in forwards;
+    animation: navBarAnimation 1s ease-in forwards;
     margin-bottom: 0;
     z-index: 100;
    }
- 
+
  @media (min-width:768px){
     .navbar .navbar-nav > li > a::after{
         content: "";
@@ -14,7 +14,7 @@
         width: 100%;
         height: 4px;
         border-radius: 2px;
-        background-color: #b78c33;
+        background-color: #3f51b5;
         transition-property: all;
         transition-duration: 0.5s;
         transition-timing-function: ease;
@@ -23,19 +23,24 @@
         opacity:1;
         bottom:0;
     }
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        animation:navBarAnimation .5s ease-in forwards;
+    }
 
  } 
 
   @keyframes navBarAnimation {
       0%{
-          transform:translateY(-40px);
           opacity: 0;
       }
       70%{
           opacity: 0.4;
       }
       100%{
-            transform:translateY(0);
           opacity:1;
       }
   }
+
+
+

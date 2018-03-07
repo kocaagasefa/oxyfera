@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Main from './components/Sections/Main/Main';
-import {Route,Switch} from 'react-router';
+import {Route,Switch,Redirect} from 'react-router';
 import AboutUs from './components/Sections/AboutUs/AboutUs';
 import Products from './components/Sections/Products/Products';
 import Contact from './components/Sections/Contact/Contact';
@@ -9,17 +9,22 @@ import Layout from './hoc/Layout/Layout';
 
 
 class App extends Component {
+  componentDidUpdate(prevProps){
+    if (this.props.location !== prevProps.location) {
+      window.scrollTo(0, 0)
+    }
+  }
 
   render() {
-    const url=this.props.match.url;
     return (
       <div className="App">      
-      <Layout home={url}>
+      <Layout>
         <Switch>
-          <Route path={url+"/about"} exact component={AboutUs} />
-          <Route path={url+"/products"} exact component={Products} />
-          <Route path={url+"/contact"} exact component={Contact} />
-          <Route path={url} exact component={Main} />
+          <Route path="/about" exact component={AboutUs} />
+          <Route path="/products" component={Products} />
+          <Route path="/contact" exact component={Contact} />
+          <Route path="/" exact component={Main} />
+          <Redirect from="*" to="/" />
         </Switch>
       </Layout>
       </div>

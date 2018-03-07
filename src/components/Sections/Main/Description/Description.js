@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid,Row,Col,Thumbnail,PageHeader,Well} from 'react-bootstrap';
+import {Grid,Row,Col,Thumbnail} from 'react-bootstrap';
 import './Description.css';
 import BarImage from '../../../../assets/images/Description/content1.jpeg';
 import descriptionText from './descriptionText';
@@ -9,7 +9,7 @@ const description = () => (
         
         <Grid >
                       
-            <Row className="Description-TextArea">       
+            <Row className="Description-TextArea" id="description">       
            
                 <Col sm={6} md={3} smOffset={3} mdOffset={0}>
                     <Thumbnail src={BarImage}/>

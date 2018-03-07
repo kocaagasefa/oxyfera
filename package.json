@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "emailjs-com": "^1.5.14",
     "google-maps-react": "^1.1.2",
+    "gsap": "^1.20.4",
     "nuka-carousel": "^3.0.1",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",

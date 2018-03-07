@@ -1,52 +1,100 @@
 import React, {Component} from 'react';
-import {FormGroup,ControlLabel,FormControl,Button,Form,PageHeader,Panel} from 'react-bootstrap';
-import './ContactForm.css';
+import {FormGroup,ControlLabel,FormControl,Button,Panel} from 'react-bootstrap';
+import emailjs from 'emailjs-com';
+import Spinner from '../../../UI/Spinner/Spinner';
 
 class ContactForm extends Component{
     state={
-        name:null,
-        email:null,
-        number:null,
-        message:null
+        mail:{
+            name:null,
+            email:null,
+            number:null,
+            message:null
+        },
+        isSending:false,
+        isError:false,
+        isSuccess:false     
     }
     getValidationState(controlId){
-        if(this.state[controlId]===null)
+        const mail=this.state.mail;
+        if(mail[controlId]===null)
             return null;
-        if(this.state[controlId].trim()==="")
+        if(mail[controlId].trim()==="")
             {return 'warning';}
         
         switch(controlId){
             case 'name':
             {
-                console.log("Name validated");
                 return 'success';
             }
             case 'email':{
-                return this.state.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)?'success':'warning';
+                return mail.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)?'success':'warning';
+            }
+            case 'number':{
+                return mail.number.length===10? "success":"warning";
             }
             default:{
                 return null;
             }
         }
     }
+
     handleInputChange=(event)=>{
         const controlId=event.target.id;
-        this.setState({[controlId]:event.target.value})
+        let mail = {...this.state.mail,[controlId]:event.target.value}
+
+        this.setState({mail})
     }
     handleInputFocus=(event)=>{
         const controlId=event.target.id;
-        if(this.state[controlId]===null){
-            this.setState({[controlId]:""})
+        const mail = {...this.state.mail};
+        if(mail[controlId]===null){
+            mail[controlId]="";
+            this.setState({mail});
         }
+    }
+    submittedHandler=(e)=>{        
+        e.preventDefault();
+        const mail= {...this.state.mail};
+
+        if((mail.email&&mail.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i))
+            ||(mail.number&&(mail.number.length>9&&mail.number.length<12)))
+        {
+            this.setState({isSending:true});
+            
+                try{
+                    emailjs.init("user_ceT8GrIQxqxJpP9MYSeUr");
+                    emailjs.send("outlook","oxyfera_contact_form",mail)
+                        .then(response=>{
+                                if (response){
+                                    this.setState({isSending:false,isSuccess:true,isError:false});
+                                    this.props.showAlert("success");
+                                }
+                                else
+                                    this.handleMailSendError();
+                });
+                }
+                catch(error){
+                    this.handleMailSendError();
+                    console.log(error);
+
+                }
+            }
+        
+        else {
+            alert("Telefon numarası ya da Email adreslerinden en az biri geçerli olmalıdır");
+        }
+        
+
+    }
+    handleMailSendError=()=>{
+        this.props.showAlert("danger");
+        this.setState({isSending:false,isSuccess:false,isError:true});
     }
 
     render(){
-        return (
-            <form className="ContactForm">
-            <Panel bsStyle="info">
-                <Panel.Heading>
-            <Panel.Title componentClass="h4">Bize Ulaşın:</Panel.Title>
-            </Panel.Heading>
+
+        let panelBody = (
             <Panel.Body>
                 <FormGroup 
                     controlId="name"
@@ -83,17 +131,31 @@ class ContactForm extends Component{
                 <FormGroup 
                     validationState={this.getValidationState('message')}
                     controlId="message">
-                    <ControlLabel>Ad Soyad</ControlLabel>
+                    <ControlLabel>Mesajınız</ControlLabel>
                     <FormControl 
                         componentClass="textarea"
                         placeholder="Mesajınızı yazınız"
                         onFocus={this.handleInputFocus}
                         onChange={this.handleInputChange}/>       
                 </FormGroup>
-                <FormGroup>
-                    <Button bsStyle="primary" style={{float:"right",minWidth:"30%"}}>Gönder</Button>      
+                <FormGroup>                    
+                    <Button type="submit" bsStyle="primary" style={{float:"right",minWidth:"30%"}}>Gönder</Button>      
                 </FormGroup>
                 </Panel.Body>
+
+        );
+        if(this.state.isSending)
+            panelBody= <Spinner />
+
+        return (
+            
+            <form className="ContactForm" onSubmit={this.submittedHandler}>
+            
+            <Panel bsStyle="info">
+                <Panel.Heading>
+            <Panel.Title componentClass="h4">Bize Ulaşın:</Panel.Title>
+            </Panel.Heading>
+                    {panelBody}
                 </Panel>
             </form> 
             
