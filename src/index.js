@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 
 const app = (
     <BrowserRouter>
-        <App />
+        <Route path="/" component={App} />
     </BrowserRouter>
 )
 ReactDOM.render(app, document.getElementById('root'));

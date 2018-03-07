@@ -10,6 +10,7 @@ const products = props => (
     <Switch>
         <Route path={props.match.url+"/single"} component={()=><Product product={productsData[0]}/>} />
         <Route path={props.match.url+"/double"} component={()=><Product product={productsData[1]}/>} />        
+        <Route path={props.match.url+"/four"} component={()=><Product product={productsData[2]}/>} />        
     </Switch>
     </div>
 );

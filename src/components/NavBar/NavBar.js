@@ -29,12 +29,15 @@ const navBar = (props) => (
                   <MenuItem>
                     Tekli Oksijen Bar
                     </MenuItem> 
-                </LinkContainer>
-                
-              
+                </LinkContainer>  
                 <LinkContainer exact to="/products/double">
                     <MenuItem>
                         İkili Oksijen Bar
+                    </MenuItem> 
+                </LinkContainer>
+                <LinkContainer exact to="/products/four">
+                    <MenuItem>
+                        Dörtlü Oksijen Bar
                     </MenuItem> 
                 </LinkContainer>
                 

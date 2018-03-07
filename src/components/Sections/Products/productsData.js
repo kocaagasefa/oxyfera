@@ -1,5 +1,6 @@
 import image_single from'../../../assets/images/products/bar_single.jpg';
 import image_double from'../../../assets/images/products/bar_double.jpg';
+import image_four from'../../../assets/images/products/bar_four.jpg';
 
 export default [
     {
@@ -31,5 +32,14 @@ export default [
             "İsteğe bağlı olarak modüler şekilde çoğaltma"
         ]
 
+    },
+    {
+        name:"Dörtlü Oksijen Bar",
+        image: image_four,
+        specs:[
+            "4 kişinin aynı anda kullanabileceği tamamen borosilikat malzemeden üretilmiş ve görselliği ile dikkat çeken 4 lü oksijen bar ülkemizde sadece oxyfera tarafından hizmetinize sunulmaktadır."
+        ]
+
     }
+    
 ]
